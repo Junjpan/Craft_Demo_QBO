@@ -1,21 +1,22 @@
-.projects_dashboard{
+.navbar{
+    margin:0px;
     position:absolute;
-    top:92px;
+    top:44px;
     left:200px;
-    color:black;
+    height:48px;
     width:calc(100vw - 200px);
-    padding:2rem 3rem;
     @media screen and (max-width:760px){
         left:0px;
         width:100%;
+
     }
 }
 
-.projects_dashboard_hidden{
+.navbar_expand{
+    margin:0px;
     position:absolute;
-    top:92px;
+    top:44px;
     left:0px;
-    color:black;
+    height:48px;
     width:100%;
-    padding:2rem 3rem;
 }

@@ -3,7 +3,7 @@ import Logo from './logo/Logo';
 import Menu from './menu/Menu';
 import Button from './button/Button';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div className='sidebar'>
       <Logo />

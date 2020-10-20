@@ -1,0 +1,19 @@
+.companyName{
+    display:flex;
+    align-items: center;
+    justify-content: left;
+
+    p{
+        font-weight: bold;
+    }
+}
+
+.faBars_icon{
+    color:#6b6c72;
+    font-size: 1.5rem;
+    padding: 1rem;
+    &:hover{
+        cursor: pointer;
+        color:black;
+    }
+}
