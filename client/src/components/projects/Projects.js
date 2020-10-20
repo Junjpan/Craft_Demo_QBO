@@ -11,7 +11,7 @@ const Projects = () => {
 
   return (
     <Fragment>
-      {sidebarWindow&&<Sidebar sidebar={sidebarWindow}/>}
+      {sidebarWindow&&<Sidebar />}
       <Navbar  onClick={toggleSidebar} sidebar={sidebarWindow}/>
       <div className={sidebarWindow?'projects_dashboard':'projects_dashboard_hidden'}>Project</div>
     </Fragment>

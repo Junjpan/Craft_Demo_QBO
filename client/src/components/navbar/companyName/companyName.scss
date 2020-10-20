@@ -1,11 +1,12 @@
 .companyName{
+    float:left;
     display:flex;
     align-items: center;
     justify-content: left;
-
     p{
         font-weight: bold;
     }
+
 }
 
 .faBars_icon{

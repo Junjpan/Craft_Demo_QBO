@@ -4,7 +4,8 @@
     top:44px;
     left:200px;
     height:48px;
-    width:calc(100vw - 200px);
+    display:block;
+    width:calc(100% - 200px);
     @media screen and (max-width:760px){
         left:0px;
         width:100%;
@@ -18,5 +19,7 @@
     top:44px;
     left:0px;
     height:48px;
+    display:block;
     width:100%;
+    justify-content: space-between;
 }
