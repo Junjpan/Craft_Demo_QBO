@@ -1,0 +1,14 @@
+.sidebar{
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    top:44px;
+    left:0px;
+    color:white;
+    background:#393a3d;
+    width:200px;
+    height:calc(100vh - 44px);
+    @media screen and (max-screen:760px){
+        display:none;
+    }
+}

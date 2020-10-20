@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Sidebar from "../sidebar/Sidebar";
 
 const Projects = () => {
   return (
-    <div>
-      Project
-    </div>
+    <Fragment>
+      <Sidebar />
+      <div className='projects_dashboard'>Project</div>
+    </Fragment>
   );
 };
 
-export default Projects
+export default Projects;

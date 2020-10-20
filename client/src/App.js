@@ -9,8 +9,8 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route path="/app/projects/" exact component={Projects} />
         <Redirect from="/" to="/app/projects" />
-        <Route path="/app/projects/" component={Projects} />
       </Switch>
     </BrowserRouter>
   );
