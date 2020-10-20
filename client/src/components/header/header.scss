@@ -1,0 +1,25 @@
+.header{
+    background:$greenColor;
+    width:100%;
+    font-size:0.9rem;
+    height:44px;
+    position:absolute;
+    top:0;
+    left:0;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        margin-left: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color:white;
+        &:hover{
+            cursor:pointer;
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
+    }
+}

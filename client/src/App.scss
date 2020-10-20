@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import './global.scss';
+@import './components/header/header.scss';
+
+body{
+  margin:0;
+  font-family:$globalFont;
+  font-size:16px;
+  background:white;
+}
