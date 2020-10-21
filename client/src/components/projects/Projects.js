@@ -3,6 +3,7 @@ import Sidebar from "../sidebar/Sidebar";
 import Navbar from "./../navbar/Navbar";
 import DataImage from './dataImage/DataImage';
 import Info from './info/Info';
+import Tips from './tips/Tips';
 
 const Projects = () => {
   const [sidebarWindow, setSidebarWindow] = useState(true);
@@ -24,6 +25,7 @@ const Projects = () => {
           <Info />
           <DataImage />{" "}
         </div>
+        <Tips />
       </div>
     </Fragment>
   );

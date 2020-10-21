@@ -12,6 +12,7 @@
     color:black;
     padding:2rem 3rem;
     overflow:auto;
+    height:calc(100vh - 160px);
     @media screen and (max-width:760px){
         left:0px; 
         width:100%;
@@ -19,10 +20,12 @@
 }
 
 .projects_dashboard_hidden{
+    width:100%;
     position:absolute;
     top:92px;
     left:0px;
     color:black;
     padding:2rem 3rem;
     overflow:auto;
+    height:calc(100vh - 160px);
 }

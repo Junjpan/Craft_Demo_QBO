@@ -1,0 +1,31 @@
+.tips{
+    margin-top:8rem;
+    border-top: 1px solid lightgray;
+    h4{
+        color:$grayColor
+    }
+
+   li{
+        list-style: none;
+        margin-left: -2.5rem;
+        line-height: 150%;
+        color:#0077CE;
+        a{  
+            text-decoration: none;
+            color:#0077CE;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        
+    }
+    .seemore{
+        &:hover{
+            text-decoration: underline;
+            cursor:pointer;
+        }
+    }
+    @media screen and (max-width:1200px){
+        display:none
+    }
+}
