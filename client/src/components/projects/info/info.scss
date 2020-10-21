@@ -1,0 +1,73 @@
+.info_Container{
+    width:43%;
+    color:$grayColor;
+    margin-left:3%;
+    line-height: 95%;
+    h1{
+        font-size:2.8rem;
+        line-height: 99%;
+    }
+    li{
+        font-weight:bold;
+    }
+    ul{
+        list-style:none;
+    }
+
+    ul li::before{
+        content:'\2022'; //\2022 is the css code/unicode for bullet
+        color:$greenColor;
+        font-weight:bold;
+        font-size: 1.5rem;
+        display:inline-block;
+        width:1rem;
+        margin-left:-2.5rem;
+        margin-right:0.5rem;
+    }
+
+    .sub{
+        margin-left:-1.7rem;
+    }
+
+    @media screen and ( max-width:1200px){
+        width:70%;
+    }
+
+    @media screen and (max-width:760px ){
+        width:80%;
+        margin-left:1%;
+        h1{
+            font-size:2.2rem;
+        }
+    }
+
+}
+
+.start_project_button{
+    background:$greenColor;
+    color:white;
+    font-size:inherit;
+    font-weight: bold;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:3rem 0;
+    border-radius: 18px;
+    height:40px;
+    width:150px;
+    outline:medium none;
+    border:medium none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.info_link{
+    color:#0077CE;
+    font-weight: bold;
+    &:hover{
+        cursor:pointer;
+        color: darken(#0077CE,10%);
+    }
+}

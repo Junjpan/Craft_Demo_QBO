@@ -9,7 +9,7 @@ const Navbar = (props) => {
   return (
     <nav className={props.sidebar?'navbar':'navbar_expand'}>
       <CompanyName {...props}/>
-      <Icons />
+      <Icons {...props}/>
     </nav>
   );
 };
