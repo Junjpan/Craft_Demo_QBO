@@ -58,24 +58,17 @@
       font-weight: bold;
       display: block;
     }
+    
     input,
     select,
     textarea {
-      width: 98%;
-      box-sizing: border-box;
-      margin-top: 0.5rem;
-      border: 1px solid lightgray;
-      border-radius: 2px;
-      &:focus {
-        outline: none !important;
-        border: 2px solid green;
-      }
+     @include standardInput
     }
 
     input,
     select,
     option {
-      height: 2.1rem;
+      height: 2.5rem;
     }
 
     textarea {
@@ -91,6 +84,8 @@
       font-size: 0.9rem;
     }
   }
+
+
   @media screen and (max-width: 1200px) {
     width: 50%;
     animation: expand1 1.5s;
@@ -135,3 +130,4 @@
 .plus{
     color:$lighterGreen
 }
+

@@ -3,3 +3,28 @@ $globalFont: 'PT Sans', sans-serif;
 $greenColor: #108000;
 $lighterGreen:#2ca01c;
 $grayColor:#393a3d;
+
+@mixin standardInput{
+    width: 98%;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    &:focus {
+      outline: none !important;
+      border: 1.5px solid green;
+    }
+}
+
+@mixin Button{
+    height: 36px;
+    border-radius: 36px;
+    outline:none;
+    border:1px solid $grayColor;
+    color:$grayColor;
+    font-weight: bold;
+    &:hover{
+        cursor: pointer;
+        border-width: 2px;
+    }
+  }

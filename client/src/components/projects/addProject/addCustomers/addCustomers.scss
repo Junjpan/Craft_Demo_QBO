@@ -1,0 +1,80 @@
+.new_list_window {
+  margin-top: 0.5rem;
+  position: absolute;
+  z-index: 2;
+  border: 1px solid lighten($grayColor, 50%);
+  width: 65%;
+  background: white;
+  border-radius: 2px;
+  padding: 0 1rem 1rem 1rem;
+  input {
+    @include standardInput;
+  }
+
+  .new_list_window_footer {
+    padding: 0.5rem;
+    margin: 1.5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: rgb(23, 112, 148);
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      width: 80px;
+      @include Button
+    }
+
+  }
+
+  .or{
+      border-top:2px solid lighten($grayColor, 50%);
+      span{
+          width:2rem;
+          position:absolute;
+          left:45%;
+          text-align: center;
+          transform:translateY(-10px);
+          background:white;
+      }
+
+      .maybeLater{
+          color:rgb(23, 112, 148);
+          &:hover{
+            cursor: pointer;
+          }
+      }
+      .list_info{
+          font-size:0.9rem;
+          text-align:left;
+          margin:0px;
+          color:darken($grayColor,30%);
+      }
+      .gmail_button{
+        display:block;  
+        width: 80%;
+        margin:1rem auto;
+        font-size:0.9rem;
+        @include Button
+      }
+  }
+  @media screen and (max-width: 1200px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 760px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 85%;
+  }
+}
+

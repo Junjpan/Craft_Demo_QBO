@@ -6,6 +6,7 @@ import {
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import AddCustomer from './addCustomers/AddCustomer';
 
 const AddProjectContainer = ({ openWindow }) => {
   const projectNameRef = useRef(null);
@@ -16,17 +17,21 @@ const AddProjectContainer = ({ openWindow }) => {
   const [customerAlert, setCustomersAlert] = useState(false);
   const [customersVisited, setCustomersVistited] = useState(false);
   const [visited, setVisited] = useState(false);
+  const [newListWindow, setNewListWindow] = useState(false);
+
   const customers_array = [
-    "Amy's Bird Sanctuary",
-    "Bill's Windsurf Shop",
-    "Cool Cars",
-    "Diego Rodriguez",
-    "Dukes Basketball Camp",
-    "Dylan Sollfrank",
+    { id: 1, name: "Amy's Bird Sanctuary" },
+    { id: 2, name: "Bill's Windsurf Shop" },
+    { id: 3, name: "Cool Cars" },
+    { id: 4, name: "Diego Rodriguez" },
+    { id: 5, name: "Dukes Basketball Camp" },
+    { id: 6, name: "Dylan Sollfrank" },
   ];
 
-  const sortArray = customers_array.sort();
-  
+  const sortArray = customers_array.sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
   useEffect(() => {
     projectNameRef.current.focus();
   }, []);
@@ -39,8 +44,19 @@ const AddProjectContainer = ({ openWindow }) => {
     }
   }, [visited, name]);
 
+  //control customers list window
   useEffect(() => {
-    if (customersVisited && customers.length === 0) {
+    if (customers === "add") {
+      setNewListWindow(true);
+    }else{
+      setNewListWindow(false);
+    }
+  }, [customers]);
+
+  useEffect(() => {
+    if (customers === "add") {
+      setCustomersAlert(true);
+    } else if (customersVisited && customers.length === 0) {
       setCustomersAlert(true);
     } else {
       setCustomersAlert(false);
@@ -88,36 +104,41 @@ const AddProjectContainer = ({ openWindow }) => {
               required
             />
           </label>
-          <label htmlFor='customers' className={customerAlert ? "alert" : ""}>
-            {customerAlert && (
-              <FontAwesomeIcon
-                icon={faExclamationCircle}
-                style={{ marginRight: "10px" }}
-              />
-            )}
-            Customers *
-            <br />
-            <select
-              id='customers'
-              required
-              className={customerAlert ? "borderalert" : ""}
-              onClick={() => setCustomersVistited(true)}
-              onChange={(e) => setCustomers(e.target.value)}
-            >
-              <option value='' disabled selected hidden>
-                {"  "}Who's the project for?
-              </option>
-              <div>Hello</div>
-              <option value=''>+ Add new</option>
-              {sortArray.map((customer, index) => {
-                return (
-                  <option key={index} value={customer}>
-                    {customer}
-                  </option>
-                );
-              })}
-            </select>
-          </label>
+
+          <div>
+            <label htmlFor='customers' className={customerAlert ? "alert" : ""}>
+              {customerAlert && (
+                <FontAwesomeIcon
+                  icon={faExclamationCircle}
+                  style={{ marginRight: "10px" }}
+                />
+              )}
+              Customers *
+              <br />
+              <select
+                id='customers'
+                required
+                className={customerAlert ? "borderalert" : "customers_List"}
+                onClick={() => setCustomersVistited(true)}
+                onChange={(e) => setCustomers(e.target.value)}
+              >
+                <option value='' disabled selected hidden>
+                  {"  "}Who's the project for?
+                </option>
+                <option value='add'>+ Add new</option>
+                {sortArray.map((customer) => {
+                  return (
+                    <option key={customer.id} value={customer.name}>
+                      {customer.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
+
+            {newListWindow && <AddCustomer />}
+          </div>
+
           <label htmlFor='notes'>
             Notes
             <br />
@@ -127,6 +148,7 @@ const AddProjectContainer = ({ openWindow }) => {
               rows='7'
             />
           </label>
+
           <button className='savebutton' disabled={disable}>
             Save
           </button>
