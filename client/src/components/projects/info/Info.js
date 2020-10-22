@@ -1,8 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
-const Info = () => {
+const Info = (props) => {
+
   return (
     <div className='info_Container'>
       <h1>Run your projects with confidence</h1>
@@ -31,9 +33,15 @@ const Info = () => {
           efforts
         </p>
       </ul>
-      <div ><button className="start_project_button">Start a project</button></div>
+      <div>
+        <button className='start_project_button' onClick={props.openWindow} >Start a project</button>
+      </div>
     </div>
   );
 };
+
+Info.propTypes={
+  openWindow:PropTypes.func.isRequired
+}
 
 export default Info;

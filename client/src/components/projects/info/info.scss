@@ -16,7 +16,7 @@
 
     ul li::before{
         content:'\2022'; //\2022 is the css code/unicode for bullet
-        color:$greenColor;
+        color:$lighterGreen;
         font-weight:bold;
         font-size: 1.5rem;
         display:inline-block;
@@ -44,7 +44,7 @@
 }
 
 .start_project_button{
-    background:$greenColor;
+    background:$lighterGreen;
     color:white;
     font-size:inherit;
     font-weight: bold;
