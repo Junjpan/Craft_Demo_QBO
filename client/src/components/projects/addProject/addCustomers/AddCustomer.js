@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons"
 
 
-const AddCustomer = () => {
+const AddCustomer = ({addCustomer}) => {
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
 
@@ -23,7 +23,10 @@ const AddCustomer = () => {
   const saveNewCustomers = () => {
     if (name.length === 0) {
         setError(true)
+    }else{
+      addCustomer(name)
     }
+
   };
 
   return (
@@ -57,5 +60,9 @@ const AddCustomer = () => {
     </div>
   );
 };
+
+AddCustomer.propTypes={
+  addCustomer:PropTypes.func.isRequired
+}
 
 export default AddCustomer;

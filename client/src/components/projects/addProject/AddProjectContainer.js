@@ -6,18 +6,9 @@ import {
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import AddCustomer from './addCustomers/AddCustomer';
+import AddCustomer from "./addCustomers/AddCustomer";
 
 const AddProjectContainer = ({ openWindow }) => {
-  const projectNameRef = useRef(null);
-  const [customers, setCustomers] = useState("");
-  const [name, setName] = useState("");
-  const [disable, setDisable] = useState(true);
-  const [nameAlert, setNameAlert] = useState(false);
-  const [customerAlert, setCustomersAlert] = useState(false);
-  const [customersVisited, setCustomersVistited] = useState(false);
-  const [visited, setVisited] = useState(false);
-  const [newListWindow, setNewListWindow] = useState(false);
 
   const customers_array = [
     { id: 1, name: "Amy's Bird Sanctuary" },
@@ -28,12 +19,29 @@ const AddProjectContainer = ({ openWindow }) => {
     { id: 6, name: "Dylan Sollfrank" },
   ];
 
-  const sortArray = customers_array.sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  const projectNameRef = useRef(null);
+  const [customers, setCustomers] = useState("");
+  const [name, setName] = useState("");
+  const [customersList, setCustomersList] = useState(customers_array);
+  const [disable, setDisable] = useState(true);
+  const [nameAlert, setNameAlert] = useState(false);
+  const [customerAlert, setCustomersAlert] = useState(false);
+  const [customersVisited, setCustomersVistited] = useState(false);
+  const [visited, setVisited] = useState(false);
+  const [newListWindow, setNewListWindow] = useState(false);
+
+  const sortCustomersList = (array) => {
+    return array.sort((a, b) => a.name.localeCompare(b.name));
+  };
 
   useEffect(() => {
     projectNameRef.current.focus();
+    const items=localStorage.getItem('list');
+    if(items){
+      setCustomersList(JSON.parse(items))
+    }else{
+      localStorage.setItem('list',JSON.stringify(customers_array))
+    }
   }, []);
 
   useEffect(() => {
@@ -48,7 +56,7 @@ const AddProjectContainer = ({ openWindow }) => {
   useEffect(() => {
     if (customers === "add") {
       setNewListWindow(true);
-    }else{
+    } else {
       setNewListWindow(false);
     }
   }, [customers]);
@@ -70,6 +78,18 @@ const AddProjectContainer = ({ openWindow }) => {
       setDisable(true);
     }
   }, [customers, name]);
+
+  const addCustomer = async (newCustomer) => {
+    const items=JSON.parse(localStorage.getItem('list'));
+    const updateItems=[...items,{ id: items.length + 1, name: newCustomer }];
+    localStorage.setItem('list',JSON.stringify(updateItems))
+    setCustomersList(updateItems);
+    await setNewListWindow(false);
+  };
+
+  const checkClickOnSelect=(e)=>{
+    setCustomersVistited(true);
+  }
 
   return (
     <div>
@@ -119,14 +139,14 @@ const AddProjectContainer = ({ openWindow }) => {
                 id='customers'
                 required
                 className={customerAlert ? "borderalert" : "customers_List"}
-                onClick={() => setCustomersVistited(true)}
+                onClick={checkClickOnSelect}
                 onChange={(e) => setCustomers(e.target.value)}
               >
                 <option value='' disabled selected hidden>
                   {"  "}Who's the project for?
                 </option>
                 <option value='add'>+ Add new</option>
-                {sortArray.map((customer) => {
+                {sortCustomersList(customersList).map((customer) => {
                   return (
                     <option key={customer.id} value={customer.name}>
                       {customer.name}
@@ -136,7 +156,7 @@ const AddProjectContainer = ({ openWindow }) => {
               </select>
             </label>
 
-            {newListWindow && <AddCustomer />}
+            {newListWindow && <AddCustomer addCustomer={addCustomer} />}
           </div>
 
           <label htmlFor='notes'>
