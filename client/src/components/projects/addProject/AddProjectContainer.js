@@ -7,9 +7,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import AddCustomer from "./addCustomers/AddCustomer";
+import { v4 as uuidv4 } from 'uuid';
 
 const AddProjectContainer = ({ openWindow }) => {
-
   const customers_array = [
     { id: 1, name: "Amy's Bird Sanctuary" },
     { id: 2, name: "Bill's Windsurf Shop" },
@@ -18,10 +18,10 @@ const AddProjectContainer = ({ openWindow }) => {
     { id: 5, name: "Dukes Basketball Camp" },
     { id: 6, name: "Dylan Sollfrank" },
   ];
-
   const projectNameRef = useRef(null);
   const [customers, setCustomers] = useState("");
   const [name, setName] = useState("");
+  const [note,setNote]=useState('');
   const [customersList, setCustomersList] = useState(customers_array);
   const [disable, setDisable] = useState(true);
   const [nameAlert, setNameAlert] = useState(false);
@@ -79,16 +79,32 @@ const AddProjectContainer = ({ openWindow }) => {
     }
   }, [customers, name]);
 
+
   const addCustomer = async (newCustomer) => {
     const items=JSON.parse(localStorage.getItem('list'));
     const updateItems=[...items,{ id: items.length + 1, name: newCustomer }];
     localStorage.setItem('list',JSON.stringify(updateItems))
     setCustomersList(updateItems);
     await setNewListWindow(false);
+    await setCustomers(newCustomer)
+    
   };
 
   const checkClickOnSelect=(e)=>{
     setCustomersVistited(true);
+  }
+
+  const saveNewProject=(e)=>{
+    e.preventDefault();
+    const newProject={id:uuidv4(),name,note,customer:customers}
+    const projects=JSON.parse(localStorage.getItem('projects'));
+    if(projects){
+      const updatedProjects=[...newProject,newProject];
+      localStorage.setItem('projects',JSON.stringify(updatedProjects))
+    }else{
+      localStorage.setItem('projects',JSON.stringify([newProject]))
+    }
+    window.location.href=`/app/projects/projectdetais/${newProject.id}`
   }
 
   return (
@@ -166,10 +182,11 @@ const AddProjectContainer = ({ openWindow }) => {
               id='notes'
               placeholder=' Add details you want to remember.'
               rows='7'
+              onChange={(e)=>setNote(e.target.value)}
             />
           </label>
 
-          <button className='savebutton' disabled={disable}>
+          <button className='savebutton' disabled={disable} onClick={saveNewProject}>
             Save
           </button>
         </form>
