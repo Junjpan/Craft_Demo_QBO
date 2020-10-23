@@ -1,0 +1,60 @@
+.subnavbar{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items: center;
+    height:36px;
+    width:calc(100vw - 300px);
+    margin-top: 0px;
+    span{
+        font-size: 0.8rem;
+        border-right:1px solid gray;
+        padding:0 0.7rem;
+        font-weight: bold;
+    }
+    span:nth-child(1){
+        padding-left:0 !important;
+    }
+
+    .star{
+        color:gray;
+        border-right:none;
+        &:hover{
+            color:$greenColor
+        }
+    }
+
+    button{
+        font-weight: 600;
+        font-size:1rem;
+        border-radius: 36px;
+        height:36px;
+        outline:medium none;
+        margin-right:1rem;
+    }
+
+    .edit_button{
+        width:100px;
+        border:2px solid #393a3d;
+        color:#393a3d;
+        &:hover{
+            background:lightgray;
+        }
+    }
+
+    .add_project_button{
+        background:#2ca01c;
+        color:white;
+        border:none;
+        width:150px;
+        &:hover{
+            background:$greenColor;
+            cursor: pointer;
+        }
+    }
+   
+    @media screen and (max-width:760px){
+        width:80%;
+        button{margin-top:1rem}
+    }
+}

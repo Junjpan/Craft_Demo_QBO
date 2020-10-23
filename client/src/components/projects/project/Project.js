@@ -3,20 +3,23 @@ import Sidebar from "../../sidebar/Sidebar";
 import Navbar from "../../navbar/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import SubNavbar from './subNavbar/SubNavbar';
+import { Details } from './Details/Details';
 
 const Project = (props) => {
   const [sidebarWindow, setSidebarWindow] = useState(true);
   const [projectData, setProjectData] = useState({});
-  const projectId = props.match.params.id;
+  
 
   useEffect(() => {
+    const projectId = props.match.params.id;
     const projects = JSON.parse(localStorage.getItem("projects"));
     if (projects === null) {
       window.location.href = "/app/projects";
     }
     const project = projects.filter((project) => project.id === projectId);
     setProjectData(...project);
-  });
+  },[props.match.params.id]);
 
   const toggleSidebar = () => {
     setSidebarWindow((prev) => !prev);
@@ -32,14 +35,16 @@ const Project = (props) => {
         }
       >
         <div className='mainContent'>
-          <p className='all_projects'>
+          <div className='all_projects'>
             <FontAwesomeIcon
               icon={faChevronCircleLeft}
               style={{ marginRight: "10px" }}
             />
             <span>All projects</span>
             <h4>{projectData.name}</h4>
-          </p>
+            <SubNavbar data={projectData}/>
+            <Details />
+          </div>
           
         </div>
       </div>

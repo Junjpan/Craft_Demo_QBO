@@ -99,7 +99,7 @@ const AddProjectContainer = ({ openWindow }) => {
     const newProject={id:uuidv4(),name,note,customer:customers}
     const projects=JSON.parse(localStorage.getItem('projects'));
     if(projects){
-      const updatedProjects=[...newProject,newProject];
+      const updatedProjects=[...projects,newProject];
       localStorage.setItem('projects',JSON.stringify(updatedProjects))
     }else{
       localStorage.setItem('projects',JSON.stringify([newProject]))
