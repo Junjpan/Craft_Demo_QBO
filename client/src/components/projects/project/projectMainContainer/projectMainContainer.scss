@@ -1,0 +1,32 @@
+.container{
+    margin-top: 1.5rem;
+}
+
+.project_main_container{
+    position:absolute;
+    z-index:5;
+    width:calc(100vw - 300px);
+}
+
+.project_tab_group{
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+.Project_main_container_details{
+    width:100%;
+    min-height:400px;
+    background:white;
+    .hourly_costs_checkbox{
+        font-size: 1.1rem;
+        float:right;
+        display:flex;
+        color:gray;
+        justify-content: space-between;
+        align-items: center;
+        width:230px;
+        margin-right:1rem ;
+        
+    }
+}
+

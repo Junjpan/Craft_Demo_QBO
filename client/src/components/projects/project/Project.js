@@ -3,13 +3,13 @@ import Sidebar from "../../sidebar/Sidebar";
 import Navbar from "../../navbar/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import SubNavbar from './subNavbar/SubNavbar';
-import { Details } from './Details/Details';
+import SubNavbar from "./subNavbar/SubNavbar";
+import Details from "./Details/Details";
+import ProjectMainContainer from "./projectMainContainer/ProjectMainContainer";
 
 const Project = (props) => {
   const [sidebarWindow, setSidebarWindow] = useState(true);
   const [projectData, setProjectData] = useState({});
-  
 
   useEffect(() => {
     const projectId = props.match.params.id;
@@ -19,7 +19,7 @@ const Project = (props) => {
     }
     const project = projects.filter((project) => project.id === projectId);
     setProjectData(...project);
-  },[props.match.params.id]);
+  }, [props.match.params.id]);
 
   const toggleSidebar = () => {
     setSidebarWindow((prev) => !prev);
@@ -42,10 +42,10 @@ const Project = (props) => {
             />
             <span>All projects</span>
             <h4>{projectData.name}</h4>
-            <SubNavbar data={projectData}/>
+            <SubNavbar data={projectData} />
             <Details />
+            <ProjectMainContainer/>
           </div>
-          
         </div>
       </div>
     </div>

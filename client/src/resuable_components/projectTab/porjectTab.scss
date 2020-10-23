@@ -1,0 +1,19 @@
+.project_tab{
+    background:white;
+    outline:medium none;
+    height:38px;
+    border:medium none;
+    font-size:1.2rem;
+    color:$grayColor;
+    margin-right:1.2rem;
+    &:focus{
+        border-bottom:2px solid $greenColor;
+    }
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.tab{
+    position:relative;
+}

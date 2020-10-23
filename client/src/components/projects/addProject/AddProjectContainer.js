@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import BackDrop from "../../../resuable_components/menuItem/backDrop/BackDrop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -8,6 +7,7 @@ import {
 import PropTypes from "prop-types";
 import AddCustomer from "./addCustomers/AddCustomer";
 import { v4 as uuidv4 } from 'uuid';
+import BackDrop from '../../../resuable_components/backDrop/BackDrop';
 
 const AddProjectContainer = ({ openWindow }) => {
   const customers_array = [
