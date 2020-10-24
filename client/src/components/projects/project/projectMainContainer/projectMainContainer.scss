@@ -12,6 +12,9 @@
     display:flex;
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
+    @media screen and (max-width:760px){
+        width:120%;
+    }
 }
 .Project_main_container_details{
     width:100%;

@@ -1,3 +1,9 @@
+.box{
+  @media screen and (max-width:530px){
+    margin-top: 7rem;
+  }
+}
+
 .details_container {
   box-sizing: border-box;
   width: 100%;
@@ -13,6 +19,7 @@
   color: #333333;
   font-size: 0.8rem;
   padding: 0.5rem;
+
   .bar_title {
     height: 50px;
     padding: 5px 15px;
@@ -27,6 +34,7 @@
     @media screen and (max-width: 1200px) {
       flex-direction: row;
     }
+
   }
 
   .bar_details {

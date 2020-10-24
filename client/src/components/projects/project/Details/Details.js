@@ -3,7 +3,7 @@ import "./detail.scss";
 
 export const Details = () => {
   return (
-    <React.Fragment>
+    <div className="box">
     <div className='details_container'>
       <div className='bar_title'>
         <p>--</p>
@@ -31,7 +31,7 @@ export const Details = () => {
       </div>
     </div>
     <span className="prject_tour_link">Take project tour</span>
-    </React.Fragment>
+    </div>
   );
 };
 
