@@ -6,7 +6,8 @@ import {
   faSearch,
   faBell,
   faCog,
-  faPlusCircle
+  faPlusCircle,
+  faEllipsisV,
 } from "@fortawesome/free-solid-svg-icons";
 import { PropTypes } from "prop-types";
 import "./icon.scss";
@@ -16,31 +17,37 @@ const Icons = (props) => {
     <div>
       <ul className='icons'>
         {!props.sidebar && (
-          <li>
+          <li className="plus_icon">
             <FontAwesomeIcon
               icon={faPlusCircle}
-              className='navbar_icon'
+              className='navbar_icon '
             ></FontAwesomeIcon>
           </li>
         )}
-        <li>
+        <li className="plus_icon_hidden">
+            <FontAwesomeIcon
+              icon={faPlusCircle}
+              className='navbar_icon '
+            ></FontAwesomeIcon>
+          </li>
+        <li className="user_icon">
           <FontAwesomeIcon
             icon={faUser}
-            className='navbar_icon'
+            className='navbar_icon '
           ></FontAwesomeIcon>
           <span>My Experts</span>
         </li>
-        <li>
+        <li className="question_icon">
           <FontAwesomeIcon
             icon={faQuestionCircle}
-            className='navbar_icon'
+            className='navbar_icon '
           ></FontAwesomeIcon>
           <span>Help</span>
         </li>
-        <li>
+        <li className="search_icon">
           <FontAwesomeIcon
             icon={faSearch}
-            className='navbar_icon'
+            className='navbar_icon '
           ></FontAwesomeIcon>
         </li>
         <li>
@@ -50,6 +57,9 @@ const Icons = (props) => {
           ></FontAwesomeIcon>
         </li>
         <li>
+          <FontAwesomeIcon icon={faEllipsisV} className='navbar_icon ellipsis_icon' />
+        </li>
+        <li className="cog_icon">
           <FontAwesomeIcon
             icon={faCog}
             className='navbar_icon'
@@ -58,6 +68,7 @@ const Icons = (props) => {
         <li>
           <span className='username'>J</span>
         </li>
+
       </ul>
     </div>
   );
