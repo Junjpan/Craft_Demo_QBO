@@ -1,14 +1,14 @@
 import React from "react";
 import "./popup.scss";
 
-const PopUp = () => {
+const PopUp = ({close}) => {
   return (
     <div>
       <div className='triangle'></div>
       <div className='popup'>
         <div className='popup_title'>
           <h4>Your Project at a glance</h4>
-          <button className='popup_close_button'>X</button>
+          <button className='popup_close_button' onClick={()=>close()}>X</button>
         </div>
         <div style={{color:"gray", fontSize:"14px"}}>
             See your project's performance end to end. Track income and all your

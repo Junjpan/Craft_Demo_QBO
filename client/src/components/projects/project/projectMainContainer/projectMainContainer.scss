@@ -24,8 +24,11 @@
         color:gray;
         justify-content: space-between;
         align-items: center;
-        width:230px;
+        width:200px;
         margin-right:1rem ;
+        @media screen and (max-width:760px){
+            float:none;
+        }
         
     }
 }

@@ -7,22 +7,29 @@ import PopUp from './Popup/PopUp';
 
 export const ProjectMainContainer = () => {
   const [backdrop, setBackdrop] = useState(true);
+
+  const close=()=>{
+      setBackdrop(false)
+  }
+
   return (
     <div className='container'>
       {backdrop && <BackDrop />}
+      
       <div className='project_main_container'>
         <div className='project_tab_group'>
           <ProjectTab name='Overview'>
-              <PopUp />
+              {backdrop&&<PopUp close={close}/>}
           </ProjectTab>
           <ProjectTab name='Transactions' />
           <ProjectTab name='Time Activity' />
           <ProjectTab name='Project Reports' />
         </div>
+
         <div className="Project_main_container_details">
           <div className='hourly_costs_checkbox'>
-            <input type='checkbox' checked />
-            <p>Show hourly costs</p>
+            <input type='checkbox' defaultChecked />
+            <p style={{fontSize:"15px"}}>Show hourly costs</p>
             <FontAwesomeIcon icon={faPrint} />
             <FontAwesomeIcon icon={faShareSquare} />
           </div>
