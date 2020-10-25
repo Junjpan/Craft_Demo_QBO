@@ -36,3 +36,13 @@
     }
 }
 
+.income_cost_profit_container{
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    margin: 2rem;
+    @media screen and (max-width:880px){
+        flex-direction: row;
+    }
+
+}
