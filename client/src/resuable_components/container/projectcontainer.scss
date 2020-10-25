@@ -1,7 +1,7 @@
 .subContainer {
   width: 32%;
   text-align: center;
-  padding:1rem;
+  padding:0.5rem;
 
   .subcontainer_top {
       position:relative;
@@ -12,6 +12,7 @@
     border:1.5px solid lightgray;
     .sign{
         position:absolute;
+        z-index:1;
         left:98%;
         top:30%;
         background:rgb(223, 221, 221);
@@ -25,15 +26,25 @@
         justify-content: center;
     }
   }
-
+  .subcontainer_name{
+    font-size:0.8rem;
+  }
   .number {
     color: #2ca01c !important;
     font-size: 2rem;
     margin: 0px;
     transform: translateY(1rem);
   }
-
-  @media screen and (max-width:880px){
+  @media screen and (max-width:900px){
     width:100%;
-    }
+  }
+
+  @media screen and (max-width:480px){
+    width:140%;
+  }
+
+  @media screen and (max-width:300px){
+    width:200%;
+  }
+
 }

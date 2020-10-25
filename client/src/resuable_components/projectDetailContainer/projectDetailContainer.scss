@@ -5,7 +5,7 @@
   header {
     text-align: left;
     background: #d2d5d7;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     height: 2.5rem;
     font-weight: 600;
     line-height: 2.2rem;
@@ -17,6 +17,7 @@
   .project_detail_inner_container{
       display:flex;
       flex-direction:row;
+      border:1px solid lightgray;
       .side_image{
           min-width:50px;
           margin:auto 0.7rem;

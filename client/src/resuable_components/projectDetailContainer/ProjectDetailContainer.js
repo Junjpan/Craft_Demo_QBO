@@ -52,12 +52,27 @@ export const ProjectDetailContainer = (props) => {
         <span>{props.title}</span>
       </header>
       {open && (
-        <div className="project_detail_inner_container">
-          {renderImage(props.subtitle)}
-          <div style={{textAlign:"left"}}>
-            <p style={{fontWeight:"bold",marginBottom:"0"}}>{props.subtitle}</p>
-            <p style={{fontSize:"14px"}}>{props.detail}</p>
+        <div style={{ border: "1px solid lightgray", padding: "10px" }}>
+          <div className='project_detail_inner_container'>
+            {renderImage(props.subtitle)}
+            <div style={{ textAlign: "left" }}>
+              <p style={{ fontWeight: "bold", marginBottom: "0" }}>
+                {props.subtitle}
+              </p>
+              <p style={{ fontSize: "14px" }}>{props.detail}</p>
+            </div>
           </div>
+          {props.secondTitle && (
+            <div className='project_detail_inner_container' style={{marginTop:"0.5rem"}}>
+              {renderImage(props.secondTitle)}
+              <div style={{ textAlign: "left" }}>
+                <p style={{ fontWeight: "bold", marginBottom: "0" }}>
+                  {props.secondTitle}
+                </p>
+                <p style={{ fontSize: "14px" }}>{props.seconddetail}</p>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

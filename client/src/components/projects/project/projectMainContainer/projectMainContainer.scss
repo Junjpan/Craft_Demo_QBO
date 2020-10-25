@@ -34,15 +34,19 @@
         }
         
     }
+    @media screen and (max-width:760px){
+        width:130%;
+    }
+
 }
 
 .income_cost_profit_container{
     display:flex;
     justify-content:center;
-    flex-direction: column;
+    flex-direction: row;
     margin: 2rem;
     @media screen and (max-width:880px){
-        flex-direction: row;
+        flex-direction: column;
     }
 
 }
