@@ -1,6 +1,7 @@
 import React from "react";
 import "./menu.scss";
 import MenuItem from "./../../../resuable_components/menuItem/MenuItem";
+import PropTypes from 'prop-types';
 
 const Menu = (props) => {
   return (
@@ -21,4 +22,7 @@ const Menu = (props) => {
   );
 };
 
+Menu.propTypes={
+  noArrow:PropTypes.bool
+}
 export default Menu;

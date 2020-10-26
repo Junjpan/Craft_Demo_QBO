@@ -37,6 +37,8 @@ export const ProjectDetailContainer = (props) => {
             <img src={Bills} alt={subtitle} />
           </div>
         );
+      default:
+        return(<div className='side_image'></div>)  
     }
   };
   return (
