@@ -51,7 +51,7 @@ export const ProjectMainContainer = () => {
             </ProjectContainer>
             <ProjectContainer number='$0.00' name='COSTS' sign='equal'>
               <ProjectDetailContainer
-                title='HOURLY TIME COSTS'
+                title='HOURLY TIME COST'
                 subtitle='Hours'
                 detail='Add time spend on this project.'
               />

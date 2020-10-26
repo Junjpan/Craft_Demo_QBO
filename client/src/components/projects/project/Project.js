@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../sidebar/Sidebar";
 import Navbar from "../../navbar/Navbar";
+import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import SubNavbar from "./subNavbar/SubNavbar";
@@ -40,7 +41,7 @@ const Project = (props) => {
               icon={faChevronCircleLeft}
               style={{ marginRight: "10px" }}
             />
-            <span>All projects</span>
+            <span><Link to="/app/projects">All projects</Link></span>
             <h4>{projectData.name}</h4>
             <SubNavbar data={projectData} />
             <Details />
