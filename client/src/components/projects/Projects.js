@@ -20,9 +20,9 @@ const Projects = () => {
   };
 
   return (
-    <div>      
+    <div>
       {sidebarWindow && <Sidebar />}
-      {!sidebarWindow && <SidebarCopy />}
+      {!sidebarWindow && <SidebarCopy toggleSidebar={toggleSidebar} />}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
       <div
         className={

@@ -13,7 +13,6 @@ const Info = (props) => {
         <FontAwesomeIcon
           icon={faArrowCircleRight}
           style={{ marginRight: "5px" }}
-          s
         />
         See how it works
       </p>

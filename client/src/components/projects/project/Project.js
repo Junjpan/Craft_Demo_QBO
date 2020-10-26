@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../sidebar/Sidebar";
 import Navbar from "../../navbar/Navbar";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import SubNavbar from "./subNavbar/SubNavbar";
 import Details from "./Details/Details";
 import ProjectMainContainer from "./projectMainContainer/ProjectMainContainer";
-import SidebarCopy from './../../sidebar/SidebarCopy';
+import SidebarCopy from "./../../sidebar/SidebarCopy";
 
 const Project = (props) => {
   const [sidebarWindow, setSidebarWindow] = useState(true);
@@ -30,7 +30,7 @@ const Project = (props) => {
   return (
     <div>
       {sidebarWindow && <Sidebar />}
-      {!sidebarWindow && <SidebarCopy />}
+      {!sidebarWindow && <SidebarCopy toggleSidebar={toggleSidebar}/>}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
       <div
         className={
@@ -43,11 +43,13 @@ const Project = (props) => {
               icon={faChevronCircleLeft}
               style={{ marginRight: "10px" }}
             />
-            <span><Link to="/app/projects">All projects</Link></span>
+            <span>
+              <Link to='/app/projects'>All projects</Link>
+            </span>
             <h4>{projectData.name}</h4>
             <SubNavbar data={projectData} />
             <Details />
-            <ProjectMainContainer/>
+            <ProjectMainContainer />
           </div>
         </div>
       </div>
