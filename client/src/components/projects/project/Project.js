@@ -7,6 +7,7 @@ import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import SubNavbar from "./subNavbar/SubNavbar";
 import Details from "./Details/Details";
 import ProjectMainContainer from "./projectMainContainer/ProjectMainContainer";
+import SidebarCopy from './../../sidebar/SidebarCopy';
 
 const Project = (props) => {
   const [sidebarWindow, setSidebarWindow] = useState(true);
@@ -29,6 +30,7 @@ const Project = (props) => {
   return (
     <div>
       {sidebarWindow && <Sidebar />}
+      {!sidebarWindow && <SidebarCopy />}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
       <div
         className={

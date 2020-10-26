@@ -1,5 +1,6 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
+import SidebarCopy from "../sidebar/SidebarCopy";
 import Navbar from "./../navbar/Navbar";
 import DataImage from "./dataImage/DataImage";
 import Info from "./info/Info";
@@ -15,12 +16,13 @@ const Projects = () => {
   };
 
   const openWindow = () => {
-    setNewProjectWindow(prev=>!prev);
+    setNewProjectWindow((prev) => !prev);
   };
 
   return (
-    <div>
+    <div>      
       {sidebarWindow && <Sidebar />}
+      {!sidebarWindow && <SidebarCopy />}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
       <div
         className={
@@ -33,7 +35,7 @@ const Projects = () => {
         </div>
         <Tips />
       </div>
-      {newPropjectWindow && <AddProjectContainer openWindow={openWindow}/>}
+      {newPropjectWindow && <AddProjectContainer openWindow={openWindow} />}
     </div>
   );
 };

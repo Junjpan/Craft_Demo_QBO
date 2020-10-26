@@ -3,14 +3,15 @@ import Logo from './logo/Logo';
 import Menu from './menu/Menu';
 import Button from './button/Button';
 
-const Sidebar = () => {
+const SidebarCopy = () => {
+    console.log("hello")
   return (
-    <div className='sidebar'>
+    <div className='sidebarCopy'>
       <Logo />
       <Button />
-      <Menu />
+      <Menu noArrow/>
     </div>
   );
 };
 
-export default Sidebar;
+export default SidebarCopy;

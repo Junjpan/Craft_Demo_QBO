@@ -14,19 +14,23 @@
     }
 }
 
-.sidebar_hidden{
+
+
+.sidebarCopy{
     position:absolute;
-    display:none;
+    display:flex;
     flex-direction: column;
     top:44px;
     left:0px;
     color:white;
-    background:$grayColor;
+    background:#393a3d;
     width:200px;
     box-sizing: border-box;
     height:calc(100vh - 44px);
+    display:none;
+    z-index:11;
     @media screen and (max-width:760px){
-        display:block
+        display:block;
+        width:90%;
     }
 }
-
