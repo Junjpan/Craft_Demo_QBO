@@ -18,8 +18,8 @@ const MenuItem = (props) => {
           )}{" "}
         </span>{" "}
       </a>
-
-      <div>{props.children}</div>
+      {props.children&&<div className='sideMenu'>{props.children}</div>}
+      
     </div>
   );
 };

@@ -1,9 +1,21 @@
 .menu_item {
   color: #D4D7DC;
   padding:0.8rem 1rem;
+  display:block;
+  position:relative;
+  &:after{
+    content:"";
+    position:absolute;
+    .sideMenu{
+      display:block 
+    }
+  }
   &:hover {
     cursor: pointer;
     background:black;
+    .sideMenu{
+      display:block 
+    }
   }
 
 }
@@ -15,4 +27,31 @@
   align-items: center;
   text-decoration: none;
   
+}
+
+.sideMenu{
+  display:none;
+  position:absolute;
+  color: #D4D7DC;
+  left:205px;
+  top:0px;
+  padding:0.8rem 1rem;
+  width:180px;
+  background:#393a3d;
+  z-index:11;
+  padding:0px;
+  div{
+    padding:0.8rem 1rem;
+    margin:0;
+    &:hover{
+    background:black;
+    }
+  }
+  div:nth-child(even){
+    border-bottom:2px solid gray;
+    border-top:2px solid gray;
+  }
+  
+
+
 }
