@@ -87,6 +87,7 @@ const AddProjectContainer = ({ openWindow }) => {
     setCustomersList(updateItems);
     await setNewListWindow(false);
     await setCustomers(newCustomer)
+    document.getElementById('customers').value=newCustomer
     
   };
 
