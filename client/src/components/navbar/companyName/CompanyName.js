@@ -6,8 +6,8 @@ import "./companyName.scss";
 
 const CompanyName = (props) => {
   return (
-    <div className='companyName' onClick={props.onClick}>
-      <div className='faBars_icon'>
+    <div className='companyName' >
+      <div className='faBars_icon' onClick={props.onClick}>
         <FontAwesomeIcon icon={faBars} />
       </div>
       <p>Sample Company</p>

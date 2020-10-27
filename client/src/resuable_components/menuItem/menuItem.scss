@@ -40,6 +40,7 @@
   background:#393a3d;
   z-index:11;
   padding:0px;
+  border-radius: 0px 10px 10px 10px;
   div{
     padding:0.8rem 1rem;
     margin:0;
@@ -47,11 +48,20 @@
     background:black;
     }
   }
-  div:nth-child(even){
+  div:not(:last-child){
     border-bottom:2px solid gray;
-    border-top:2px solid gray;
   }
-  
 
+  div:last-child{
+    &:hover{
+      border-radius: 0px 0px 10px 10px;
+      }
+  }
+
+  div:first-child{
+    &:hover{
+      border-radius: 0px 10px 0px 0px;
+      }
+  }
 
 }
