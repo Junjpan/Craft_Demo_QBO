@@ -44,9 +44,9 @@ const Menu = (props) => {
         <MenuItem name='Payroll' />
       ) : (
         <MenuItem name='Payroll' arrow>
-          <div>Employees</div>
-          <div>Contractors</div>
-          <div>Workers' Comp</div>
+          <div role="menuitem" >Employees</div>
+          <div role="menuitem" >Contractors</div>
+          <div role="menuitem" >Workers' Comp</div>
         </MenuItem>
       )}
 

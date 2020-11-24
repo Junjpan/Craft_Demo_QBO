@@ -7,14 +7,12 @@
         font-size:2.8rem;
         line-height: 99%;
     }
-    li{
-        font-weight:bold;
-    }
-    ul{
-        list-style:none;
-    }
+    
+   .info{
+       margin-left: 2rem;
+   } 
 
-    ul li::before{
+   .info b::before{
         content:'\2022'; //\2022 is the css code/unicode for bullet
         color:$lighterGreen;
         font-weight:bold;
@@ -44,7 +42,7 @@
 }
 
 .start_project_button{
-    background:$lighterGreen;
+    background:white;
     color:white;
     font-size:inherit;
     font-weight: bold;
@@ -53,13 +51,30 @@
     align-items: center;
     justify-content: center;
     margin:3rem 0;
-    border-radius: 18px;
-    height:40px;
-    width:150px;
+    border-radius:18px;
+    height:50px;
+    width:160px;
     outline:medium none;
     border:medium none;
+    position:relative;
+    z-index:0;
+
+    &:before{
+        content:'';
+        position:absolute;
+        top:3px;
+        right:3px;
+        left:3px;
+        bottom:3px;
+        background:$lighterGreen;
+        z-index:-1;
+        border-radius: 15px;
+    }
     &:hover{
         cursor: pointer;
+    }
+    &:focus{
+        border:2px solid $lighterGreen;
     }
 }
 

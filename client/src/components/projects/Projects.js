@@ -20,7 +20,7 @@ const Projects = () => {
   };
 
   return (
-    <div>
+    <main>
       {sidebarWindow && <Sidebar />}
       {!sidebarWindow && <SidebarCopy toggleSidebar={toggleSidebar} />}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
@@ -36,7 +36,7 @@ const Projects = () => {
         <Tips />
       </div>
       {newPropjectWindow && <AddProjectContainer openWindow={openWindow} />}
-    </div>
+    </main>
   );
 };
 

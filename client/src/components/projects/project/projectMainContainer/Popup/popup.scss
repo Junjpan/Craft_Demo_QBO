@@ -27,8 +27,11 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+   
 }
-
+.popup_title{
+    height:45px;
+}
 .popup_footer{
     button{
         outline:none;

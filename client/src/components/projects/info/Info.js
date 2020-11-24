@@ -16,24 +16,24 @@ const Info = (props) => {
         />
         See how it works
       </p>
-      <ul>
-        <li>Profitability in one place</li>
+      <div className='info'>
+        <b>Profitability in one place</b>
         <p className='sub'>
           Organize your project finances with a clear view of profits
         </p>
-        <li>Keep track of your labor costs</li>
+        <b>Keep track of your labor costs</b>
         <p className='sub'>
           See where your team is spending time and how it affects your profit
           margins
         </p>
-        <li>Eliminate the guesswork</li>
+        <b>Eliminate the guesswork</b>
         <p className='sub'>
           Understand which projects make money and where you should focus your
           efforts
         </p>
-      </ul>
+      </div>
       <div>
-        <button className='start_project_button' onClick={props.openWindow} >Start a project</button>
+        <button aria-label='start a project' className='start_project_button' onClick={props.openWindow} onKeyDown={props.openWindow} type="button">Start a project</button>
       </div>
     </div>
   );

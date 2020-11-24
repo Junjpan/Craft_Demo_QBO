@@ -10,7 +10,7 @@ const CompanyName = (props) => {
       <div className='faBars_icon' onClick={props.onClick}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-      <p>Sample Company</p>
+      <h1 style={{fontSize:"17px"}}>Sample Company</h1>
     </div>
   );
 };

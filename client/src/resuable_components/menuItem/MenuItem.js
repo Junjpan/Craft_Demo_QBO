@@ -6,10 +6,10 @@ import "./menuItem.scss";
 
 const MenuItem = (props) => {
   return (
-    <div className='menu_item'>
-      <a className="menu_item_content" href={props.href?`${props.href}`:'#'}>
+    <div className='menu_item' role="menubar" aria-label="sidebar-menu">
+      <a className="menu_item_content" href={props.href?`${props.href}`:'#'} role="button" aria-haspopup="true" aria-expanded="true">
         <span>{props.name}</span>
-        <span style={{color:"#d"}}>
+        <span>
           {props.arrow && (
             <FontAwesomeIcon
               icon={faAngleRight}

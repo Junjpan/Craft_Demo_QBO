@@ -35,8 +35,8 @@ export const ProjectMainContainer = () => {
 
         <div className='Project_main_container_details'>
           <div className='hourly_costs_checkbox'>
-            <input type='checkbox' defaultChecked />
-            <p style={{ fontSize: "15px" }}>Show hourly costs</p>
+            <input type='checkbox' defaultChecked id="show_hourly_cost"/>
+            <label htmlFor="show_hourly_cost" style={{ fontSize: "15px" }}>Show hourly costs</label>
             <FontAwesomeIcon icon={faPrint} />
             <FontAwesomeIcon icon={faShareSquare} />
           </div>

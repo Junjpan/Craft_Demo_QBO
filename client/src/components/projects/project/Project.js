@@ -28,7 +28,7 @@ const Project = (props) => {
   };
 
   return (
-    <div>
+    <main>
       {sidebarWindow && <Sidebar />}
       {!sidebarWindow && <SidebarCopy toggleSidebar={toggleSidebar}/>}
       <Navbar onClick={toggleSidebar} sidebar={sidebarWindow} />
@@ -46,14 +46,14 @@ const Project = (props) => {
             <span>
               <Link to='/app/projects'>All projects</Link>
             </span>
-            <h4>{projectData.name}</h4>
+            <p>{projectData.name}</p>
             <SubNavbar data={projectData} />
             <Details />
             <ProjectMainContainer />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

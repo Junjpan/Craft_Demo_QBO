@@ -17,7 +17,15 @@
       display:block 
     }
   }
-
+  //focus-within has limitation
+  /*
+   &:focus-within{
+    .sideMenu{
+      display:block 
+    }
+  }
+*/
+ 
 }
 
 .menu_item_content {
