@@ -4,7 +4,6 @@ import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
 const Info = (props) => {
-
   return (
     <div className='info_Container'>
       <h1>Run your projects with confidence</h1>
@@ -33,14 +32,22 @@ const Info = (props) => {
         </p>
       </div>
       <div>
-        <button aria-label='start a project' className='start_project_button' onClick={props.openWindow} onKeyDown={props.openWindow} type="button">Start a project</button>
+        <button
+          aria-label='start a project'
+          className='start_project_button'
+          onClick={props.openWindow}
+          onKeyDown={props.openWindow}
+          type='button'
+        >
+          Start a project
+        </button>
       </div>
     </div>
   );
 };
 
-Info.propTypes={
-  openWindow:PropTypes.func.isRequired
-}
+Info.propTypes = {
+  openWindow: PropTypes.func.isRequired,
+};
 
 export default Info;
